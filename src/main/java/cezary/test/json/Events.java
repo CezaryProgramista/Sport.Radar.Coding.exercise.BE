@@ -32,8 +32,9 @@ public class Events extends JsonParser {
         this.probabilityDraw = probabilityDraw;
         this.probabilityAwayTeamWinner = probabilityAwayTeamWinner;
     }
+
     @Override
     public String toString() {
-        return String.valueOf(this.probabilityHomeTeamWinner);
+        return this.seasonName;
     }
 }

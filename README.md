@@ -1,6 +1,6 @@
 # Sport.Radar.Coding.exercise.BE
 English below
-                                              Opis działania aplikacji
+                                             Opis działania aplikacji
 Aplikacja przyjmuje plik JSON jako input i wyświetla liczbę zespołów o największej liczbie prawdopodobieństwa wyniku.
 Liczba zespołów przyjmowana jest od uzytkownika.
 Input podany jest jako lista JSON o nazwie events, kazdy JSON zawiera dane eventu liste uczestników (ARRAY JSON) i JSON VENUE

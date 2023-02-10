@@ -1,32 +1,27 @@
 package cezary.test.json;
 
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.SpringBootApplication;
+
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
-import java.util.Scanner;
 import java.util.stream.Collectors;
 
+@SpringBootApplication
 public class Main {
     public static void main(String[] args) throws IOException {
+        SpringApplication.run(Main.class, args);
+
         JsonParser.parseToObject();
         for (int i = 0; i < JsonParser.parseToObject().size(); i++) {
             JsonParser.parseToObjectVenue(JsonParser.parseToObject().get(i).venue);
             JsonParser.parseToObjectCompetitor(JsonParser.parseToObject().get(i).competitors);
         }
-        objectAssociation();
-        System.out.println("List of competitors : ");
-        System.out.println(uniqueListOfCompetitors());
-        System.out.println();
-        System.out.println("please enter the number of teams you wish to display (0-"+JsonParser.parseToObject().size()+")");
-        Scanner scanner = new Scanner(System.in);
-        int teams = scanner.nextInt();
-
-        displayWinners(objectAssociation(), teams);
     }
 
     public static List<String> uniqueListOfCompetitors() {
-
         return JsonParser.hashMapCompetitor.values().stream().
                 map(Competitor -> Competitor.iterator().next().getName()).distinct().sorted().collect(Collectors.toList());
     }
@@ -90,13 +85,14 @@ public class Main {
         return listOfWinners;
     }
 
-    public static void displayWinners(List<OutputWinners> list, int teams) {
-
+    public static List<OutputWinners> displayWinners(List<OutputWinners> list, int teams) {
+        ArrayList<OutputWinners> winners = new ArrayList<>();
         List<OutputWinners> sortedList = list.stream().sorted(Comparator.comparingDouble(OutputWinners::getResult).reversed()).toList();
         for (int i = 0; i < teams; i++) {
-            System.out.println(sortedList.get(i));
-            System.out.println();
+            winners.add(sortedList.get(i));
+            System.out.println("l");
 
         }
+        return winners;
     }
 }

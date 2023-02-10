@@ -19,6 +19,7 @@ Metodą displayWinners wyswietlam posortowaną liste, metoda pobiera argument k�
 Argument pobieram od uzytownika z konsoli.
 Informuje uzytkownika o zakresach wprowadzanego argumentu tj. od 0 do rozmiaru Listy EVENTS.
 Metodą uniqueListOfCompetitors zwracam posortowane wartości hashMapy COMPETITORS.
+Do aplikacji zostało zaimplenentowane proste gui webowe z biblioteki vaadin.
 
                                  Description of how the application works
 The application takes a JSON file as input and displays the number of teams with the highest probability score.
@@ -39,3 +40,4 @@ Using the displayWinners method, I display the sorted list, the method takes an 
 The argument is taken from the user from the console.
 It informs the user about the range of the input argument, i.e. from 0 to the size of the EVENTS list.
 Using the uniqueListOfCompetitors method, I return the sorted values of the COMPETITORS hashMap
+A simple web gui from the vaadin library has been implanted into the application.

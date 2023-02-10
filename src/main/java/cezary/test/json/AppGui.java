@@ -26,13 +26,14 @@ public class AppGui extends VerticalLayout {
         integerField.setStepButtonsVisible(true);
         Notification notificationWinners = new Notification();
 
-        Notification notificationCompetitors = new Notification("LIST OF COMPETITORS COMPILED", 3000);
+        Notification notificationCompetitors = new Notification();
         Button primaryButton = new Button("SEND");
         primaryButton.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
         primaryButton.addClickListener(buttonClickEvent -> {
             try {
                 lists.outputWinnersList = Main.displayWinners(Main.objectAssociation(), integerField.getValue());
-                notificationWinners.add("LIST COMPILED  " +lists.outputWinnersList.size()+" TEAMS FOUND");
+                notificationWinners.add("LIST COMPILED  " + lists.outputWinnersList.size() + " TEAMS FOUND");
+                notificationWinners.setDuration(3000);
                 notificationWinners.open();
             } catch (IOException e) {
                 throw new RuntimeException(e);
@@ -43,6 +44,8 @@ public class AppGui extends VerticalLayout {
         competitorsButton.addThemeVariants(ButtonVariant.LUMO_PRIMARY);
         competitorsButton.addClickListener(buttonClickEvent -> {
             lists.competitorsList = Main.uniqueListOfCompetitors();
+            notificationCompetitors.add("LIST OF COMPETITORS COMPILED :" + lists.competitorsList.size() + " FOUND");
+            notificationCompetitors.setDuration(3000);
             notificationCompetitors.open();
         });
 

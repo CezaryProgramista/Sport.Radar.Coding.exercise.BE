@@ -90,8 +90,6 @@ public class Main {
         List<OutputWinners> sortedList = list.stream().sorted(Comparator.comparingDouble(OutputWinners::getResult).reversed()).toList();
         for (int i = 0; i < teams; i++) {
             winners.add(sortedList.get(i));
-            System.out.println("l");
-
         }
         return winners;
     }

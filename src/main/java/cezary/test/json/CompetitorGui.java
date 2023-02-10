@@ -1,6 +1,7 @@
 package cezary.test.json;
 
 
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.VerticalLayout;
 import com.vaadin.flow.component.virtuallist.VirtualList;
 import com.vaadin.flow.router.Route;
@@ -14,6 +15,7 @@ public class CompetitorGui extends VerticalLayout {
     public CompetitorGui(Lists lists) {
         VirtualList<String> virtualList = new VirtualList<>();
         virtualList.setItems(lists.getCompetitorsList());
+
         add(virtualList);
 
     }
